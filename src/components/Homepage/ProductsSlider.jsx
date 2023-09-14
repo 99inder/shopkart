@@ -32,17 +32,22 @@ const ProductsSlider = ({ selectedCategory }) => {
         console.log(filteredData);
 
         setFilteredProducts(filteredData);
+        // eslint-disable-next-line
     }, [selectedCategory])
 
     return (
-        <div className='ml-[6.0625rem] w-full'>
+        <div className='md:ml-[6.0625rem] w-full'>
             <Swiper
                 slidesPerView={"2"}
                 allowSlideNext={true}
                 allowSlidePrev={true}
-                spaceBetween={"260px"}
+                spaceBetween={"280px"}
                 breakpoints={{
-                    1350: {slidesPerView: 4}
+                    1350: {
+                        slidesPerView: 4,
+                        spaceBetween: "260px"
+                    },
+
                 }}
                 className="mySwiper absolute">
                 {

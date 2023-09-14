@@ -17,13 +17,8 @@
   padding: 0;
   text-decoration: none;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
-
-/* body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
 
 #heroBgTexture::before {
   content: "";

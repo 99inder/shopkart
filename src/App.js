@@ -4,7 +4,7 @@ import Footer from "./components/Common/Footer";
 
 function App() {
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden scroll-smooth">
       <Header />
       <Homepage />
       <Footer />

@@ -8,22 +8,24 @@ const HeroSection = () => {
     return (
         <div className='w-full bg-black-hero relative overflow-x-hidden'>
 
-            <div id='heroBgTexture' className='text-white pb-44 w-full'>
+            <div id='heroBgTexture' className='text-white pb-60 md:pb-44 w-full'>
                 <Navbar />
 
                 {/* VISUALS */}
-                <section className='relative mt-[2.625rem]'>
-                    <div className='w-11/12 max-w-maxContent mx-auto pl-5 font-syne text-[8.4375rem] font-extrabold leading-[76%] relative z-[1]'>
-                        <h1>Fresh</h1>
-                        <h1 className='font-outline-2 text-transparent relative left-[24%]'>2022</h1>
-                        <h1 className='relative left-[5.375%]'>Look</h1>
+                <section className='relative mt-[108px] md:mt-[2.625rem]'>
+                    <div className='w-11/12 max-w-maxContent mx-auto md:pl-5 font-syne text-[3.4375rem] md:text-[8.4375rem] font-extrabold leading-[69.08%] md:leading-[76%] relative z-[2]'>
+                        <div className="absolute md:relative -top-10">
+                            <h1>Fresh</h1>
+                            <h1 className='font-outline-2 text-transparent relative left-[24%] mt-2 md:mt-0'>2022</h1>
+                            <h1 className='relative left-[5.375%] mt-2 md:mt-0'>Look</h1>
+                        </div>
                     </div>
 
                     {/* Orange Rectangle */}
                     <div
-                        className='orangeTexture w-[71.5%] h-[354.301px] bg-orange absolute right-0 -bottom-28'
+                        className='orangeTexture w-full md:w-[71.5%] h-[324px] md:h-[354.301px] bg-orange absolute right-0 md:-bottom-28 -bottom-44 z-[1] md:z-0'
                     >
-                        <div className="text-[#161615] absolute right-0 bottom-0 mr-[1.4375rem] mb-[3.035625rem] font-work-sans text-sm leading-normal font-normal">
+                        <div className="hidden lg:block text-[#161615] absolute -right-4 2xl:right-8 bottom-0 mr-[1.4375rem] mb-[3.035625rem] font-work-sans text-sm leading-normal font-normal">
                             <p className="uppercase">Oregon jacket</p>
                             <p>$124</p>
                         </div>
@@ -34,21 +36,25 @@ const HeroSection = () => {
             {/* Star Wheel SVG */}
             <img src={starWheel}
                 alt="star_wheel.svg"
-                className="absolute top-[7.4rem] right-[6%]"
+                className="absolute md:top-[7.4rem] md:right-[6%] top-[4.9rem] -right-[190px] z-0"
             />
             {/* Model Image */}
-            <img src={model} alt="model.svg" className="absolute bottom-0 right-[8%]" />
+            <img src={model} alt="model.svg" className="absolute bottom-7 md:bottom-0 h-[599.295px] md:h-[654.951px] -right-20 md:right-[8%] w-[321px] md:w-[432px] z-[1]"/>
 
             {/* Line with Star */}
-            <div className="absolute left-0 bottom-32 h-[1px] w-[68%] bg-white flex items-center">
+            <div className="absolute left-0 bottom-32 h-[1px] w-[64%] md:w-[68%] bg-white flex items-center z-[1]">
                 <img
-                    className="absolute -right-[2%]"
+                    className="absolute -right-[2%] hidden md:block"
+                    src={starBottom} alt="star.svg"
+                />
+                <img
+                    className="absolute -right-[2%] w-[47.556px] h-[81.512px]  md:hidden"
                     src={starBottom} alt="star.svg"
                 />
             </div>
 
             {/* See More Button */}
-            <div className="w-11/12 max-w-maxContent mx-auto relative bottom-16 left-5">
+            <div className="w-11/12 max-w-maxContent mx-auto relative md:bottom-16 bottom-10 left-5 z-[1]">
                 <Link to="#" className="text-white inline-flex items-center gap-x-2 border-[1px] pb-[3px] border-white">
                     <span>
                         See more
