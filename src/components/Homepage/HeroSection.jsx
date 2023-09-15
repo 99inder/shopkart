@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import model from "../../assets/images/homepage/model.svg"
+import model from "../../assets/images/homepage/model.png"
 import starWheel from "../../assets/images/homepage/star-wheel.svg"
 import starBottom from "../../assets/images/homepage/starBottom.svg"
 import Navbar from './Navbar'
@@ -12,7 +12,7 @@ const HeroSection = () => {
                 <Navbar />
 
                 {/* VISUALS */}
-                <section className='relative mt-[108px] md:mt-[2.625rem]'>
+                <section className='relative mt-[178px] md:mt-[2.625rem]'>
                     <div className='w-11/12 max-w-maxContent mx-auto md:pl-5 font-syne text-[3.4375rem] md:text-[8.4375rem] font-extrabold leading-[69.08%] md:leading-[76%] relative z-[2]'>
                         <div className="absolute md:relative -top-10 md:top-0">
                             <h1>Fresh</h1>
@@ -35,22 +35,20 @@ const HeroSection = () => {
                         <img src={starWheel}
                             alt="star_wheel.svg"
                             loading="lazy"
-                            className="absolute md:-top-[13.4rem] md:right-[9%] -top-[9.1rem] -right-[165px] md:z-[1]"
+                            className="absolute md:-top-[13.4rem] md:right-[9%] -top-[13.1rem] -right-[165px] md:z-[1]"
                         />
 
                         {/* Model Image */}
-                        <img src={model} alt="model.svg" loading="lazy" className="absolute -bottom-[4.25rem] md:-bottom-[5.8rem] h-[599.295px] md:h-[654.951px] -right-20 md:right-[12%] w-[321px] md:w-[432px] z-[1]" />
+                        <img src={model} alt="model.png"
+                            loading="lazy"
+                            className="absolute -bottom-[6.25rem] md:-bottom-[5.8rem] h-[620.295px] w-[400px] md:h-[654.951px] -right-24 md:right-[12%]  md:w-[432px] z-[1] transition-all duration-200" />
                     </div>
-
 
                 </section>
             </div>
 
-
-
-
             {/* Line with Star */}
-            <div className="absolute left-0 bottom-32 h-[1px] w-[64%] md:w-[68%] bg-white flex items-center z-[1]">
+            <div className="absolute left-0 bottom-32 h-[1px] w-[53%] md:w-[68%] bg-white flex items-center z-[1]">
                 <img
                     className="absolute -right-[2%] hidden md:block"
                     src={starBottom} alt="star.svg"
