@@ -20,7 +20,7 @@ const Navbar = () => {
                         ShopKart
                     </Link>
                 </h1>
-                <div className='font-work-sans text-[0.875rem] font-normal leading-normal hidden md:block z-0'>
+                <div className='font-work-sans text-[0.875rem] font-extrabold leading-normal hidden md:block z-0'>
                     <Link to="#" className='uppercase'>
                         {`Wishlist (0)`}
                     </Link>
@@ -51,7 +51,7 @@ const Navbar = () => {
                                 return (
                                     <li key={item.id} className="border hover:border-b-0 border-white pr-4 pb-2 hover:pb-[9px] group cursor-pointer">
                                         <div className="relative">
-                                            <p>{item.name}</p>
+                                            <p className="font-normal">{item.name}</p>
                                             <span className="h-[1px] bg-white w-[0px] group-hover:w-full absolute left-0 transition-all duration-200"></span>
                                             <div className="group-hover:visible group-hover:block hidden invisible border border-t-0 border-white w-[calc(100%+1.125rem)] -left-[1px] absolute pb-[10px]">
                                                 <ul className="text-[0.875rem] font-light">

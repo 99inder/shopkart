@@ -5,21 +5,20 @@ import { useEffect, useState } from "react";
 import ProductsSlider from "./ProductsSlider";
 // import Swiper from "swiper";
 
+//Importing API Link
+import { CATEGORIES_API } from "../../services/apis";
+
 const NewProducts = () => {
+
+    // const swiper = new Swiper('.swiper');
 
     const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState("");
 
-    // const swiper = new Swiper('.swiper', {
-    //     allowSlideNext: true,
-    //     allowSlidePrev: true,
-    // });
-
     useEffect(() => {
-
         (async () => {
             // fetching product categories
-            let response = await fetch("https://fakestoreapi.com/products/categories");
+            let response = await fetch(CATEGORIES_API);
             response = await response.json();
             setCategories(response);
 
@@ -76,7 +75,10 @@ const NewProducts = () => {
                                 categories.map((category, index) => (
                                     <li
                                         key={index}
-                                        onClick={() => setSelectedCategory(category)}
+                                        onClick={() => {
+                                            setSelectedCategory(category);
+                                            // swiper.slideReset();
+                                        }}
                                         className={`capitalize basis-full md:text-start text-center cursor-pointer ${category === selectedCategory && "text-lg md:text-[1.625rem] font-semibold transition-all duration-200"}`}
                                     >
                                         {category}

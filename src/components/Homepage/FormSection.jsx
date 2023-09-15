@@ -1,12 +1,44 @@
 import { useRef } from "react";
+import toast from "react-hot-toast";
 
 const FormSection = () => {
 
     const submitButtonRef = useRef();
 
+    // using Refs to avoid unnecessary re-renders
+    const nameRef = useRef();
+    const emailRef = useRef();
+    const messageRef = useRef();
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Form Submitted");
+        // Making 1st alphabet capital for name
+        const name = nameRef.current.value.split(" ");
+        let capitalizedName = name.map(item => item.charAt(0).toUpperCase() + item.slice(1));
+        capitalizedName = capitalizedName.join(" ");
+
+        // organizing data for console.log()
+        const data = {
+            name: capitalizedName,
+            email: emailRef.current.value,
+            message: messageRef.current.value,
+        }
+
+        // make API request here
+
+        // logging data
+        console.log("Form Submitted>>>", data);
+
+        // showing success toast
+        toast.success("Submitted Successfully");
+
+        // scrolling focus to top of the page
+        window.scrollTo(0, 0);
+
+        // resetting the form
+        nameRef.current.value = "";
+        emailRef.current.value = "";
+        messageRef.current.value = "";
     }
 
     return (
@@ -30,16 +62,19 @@ const FormSection = () => {
                         onSubmit={handleSubmit}
                     >
                         <input
-                            className="py-1 px-2 lg:max-w-[558px] bg-transparent border-b-[1px] border-grey-form"
-                            type="text" name={"name"} placeholder="NAME"
+                            ref={nameRef}
+                            className="py-1 px-2 lg:max-w-[558px] bg-transparent border-b-[1px] border-grey-form capitalize"
+                            type="text" name={"name"} placeholder="NAME" minLength={3} required
                         />
                         <input
+                            ref={emailRef}
                             className="py-1 px-2 lg:max-w-[558px] bg-transparent border-b-[1px] border-grey-form"
-                            type="email" name={"email"} placeholder="EMAIL"
+                            type="email" name={"email"} placeholder="EMAIL" required
                         />
                         <input
+                            ref={messageRef}
                             className="py-1 px-2 lg:max-w-[558px] bg-transparent border-b-[1px] border-grey-form"
-                            type="text" name={"message"} placeholder="MESSAGE"
+                            type="text" name={"message"} placeholder="MESSAGE" minLength={10} required
                         />
 
 

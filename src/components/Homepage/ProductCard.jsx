@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
             <div className='w-full h-[20.75rem] bg-gray-200 bg-opacity-50 relative'>
                 <img
                     className='w-full h-full object-contain mix-blend-darken'
-                    src={product.image} alt="product_img"
+                    src={product.image} alt="product_img" loading="lazy"
                 />
                 <button type='button'>
                     <img className='absolute right-0 bottom-0 hover:scale-110 transition-all duration-200' src={productButton} alt="open.html" />

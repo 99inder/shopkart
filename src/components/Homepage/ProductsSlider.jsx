@@ -1,12 +1,14 @@
+import { useEffect, useState } from 'react';
+//Importing API Link
+import { PRODUCTS_API } from '../../services/apis';
+
+import ProductCard from './ProductCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import "./styles.css"
 
 import 'swiper/css';
 import 'swiper/css/navigation';
-
-import { useEffect, useState } from 'react';
-import ProductCard from './ProductCard';
 
 const ProductsSlider = ({ selectedCategory }) => {
 
@@ -17,7 +19,7 @@ const ProductsSlider = ({ selectedCategory }) => {
     useEffect(() => {
         (async () => {
             // fetching all the products listing
-            let response = await fetch("https://fakestoreapi.com/products");
+            let response = await fetch(PRODUCTS_API);
             response = await response.json();
 
             // setting all the products listing
@@ -29,16 +31,16 @@ const ProductsSlider = ({ selectedCategory }) => {
     useEffect(() => {
         const filteredData = allProducts.filter(product => product.category === selectedCategory);
 
-        console.log(filteredData);
-
         setFilteredProducts(filteredData);
+
         // eslint-disable-next-line
-    }, [selectedCategory])
+    }, [selectedCategory, allProducts]);
 
     return (
         <div className='md:ml-[6.0625rem] w-full'>
             <Swiper
                 slidesPerView={"2"}
+                // loop={true}
                 allowSlideNext={true}
                 allowSlidePrev={true}
                 spaceBetween={"280px"}
@@ -47,7 +49,6 @@ const ProductsSlider = ({ selectedCategory }) => {
                         slidesPerView: 4,
                         spaceBetween: "260px"
                     },
-
                 }}
                 className="mySwiper absolute">
                 {
