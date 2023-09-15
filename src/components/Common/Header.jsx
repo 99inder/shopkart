@@ -3,6 +3,7 @@ import facebook from "../../assets/images/header/facebook.svg";
 import linkedin from "../../assets/images/header/linkedin.svg";
 import twitter from "../../assets/images/header/twitter.svg";
 import instagram from "../../assets/images/header/instagram.svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
@@ -28,16 +29,26 @@ const Header = () => {
                 {/* Right Section of TOP HEADER */}
                 <div className="text-[0.625rem] md:text-[0.625rem] font-normal leading-normal">
                     <div className="flex gap-x-3 md:gap-x-[2.1875rem]">
-                        <p>Login</p>
+                        <button type="button">
+                            Login
+                        </button>
                         <div className="flex gap-x-3 md:gap-x-[0.875rem]">
                             <p className="hidden md:block">Follow US</p>
 
+                            {/* SOCIAL Links */}
                             <div className="flex gap-x-3">
-                                <img src={facebook} alt="facebook.svg" />
-                                <img src={linkedin} alt="linkedin.svg" />
-                                <img src={twitter} alt="twitter.svg" />
-                                <img src={instagram} alt="instagram.svg" />
-
+                                <Link to={"#"} className="flex items-center">
+                                    <img src={facebook} alt="facebook.svg" />
+                                </Link>
+                                <Link to={"#"} className="flex items-center">
+                                    <img src={linkedin} alt="linkedin.svg" />
+                                </Link>
+                                <Link to={"#"} className="flex items-center">
+                                    <img src={twitter} alt="twitter.svg" />
+                                </Link>
+                                <Link to={"#"} className="flex items-center">
+                                    <img src={instagram} alt="instagram.svg" />
+                                </Link>
                             </div>
                         </div>
                     </div>

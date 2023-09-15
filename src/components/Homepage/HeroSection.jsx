@@ -14,7 +14,7 @@ const HeroSection = () => {
                 {/* VISUALS */}
                 <section className='relative mt-[108px] md:mt-[2.625rem]'>
                     <div className='w-11/12 max-w-maxContent mx-auto md:pl-5 font-syne text-[3.4375rem] md:text-[8.4375rem] font-extrabold leading-[69.08%] md:leading-[76%] relative z-[2]'>
-                        <div className="absolute md:relative -top-10">
+                        <div className="absolute md:relative -top-10 md:top-0">
                             <h1>Fresh</h1>
                             <h1 className='font-outline-2 text-transparent relative left-[24%] mt-2 md:mt-0'>2022</h1>
                             <h1 className='relative left-[5.375%] mt-2 md:mt-0'>Look</h1>
